@@ -38,7 +38,7 @@
         <script src="data/Tauxdechmage_5.js"></script>
         <script src="data/Mdianeduniveaudevie_6.js"></script>
         <script src="data/ZRR_7.js"></script>
-        <script src="data/Zonesblanchesdelaidealimentaire_8.js"></script>
+        <script src="data/ZonesblanchesdelaidealimentaireIndreetLoire_8.js"></script>
         <script src="data/Communesavecaidealimentaire_9.js"></script>
         <script src="data/SecoursCatholique37_10.js"></script>
         <script src="data/SSVP37_11.js"></script>
@@ -54,7 +54,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[46.65944169309443,-0.05437509257738598],[47.775997475498755,2.871741720788991]]);
+        }).fitBounds([[46.711628546282064,-0.8860202861415153],[47.79844440366985,1.9737636900816493]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -77,12 +77,10 @@
         function pop_EPCI37_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">EPCI</th>\
-                        <td>' + (feature.properties['NOM_EPCI'] !== null ? autolinker.link(feature.properties['NOM_EPCI'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>EPCI</strong><br />' + (feature.properties['NOM_EPCI'] !== null ? autolinker.link(feature.properties['NOM_EPCI'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Type</th>\
-                        <td>' + (feature.properties['TYPE_EPCI'] !== null ? autolinker.link(feature.properties['TYPE_EPCI'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Type</strong><br />' + (feature.properties['TYPE_EPCI'] !== null ? autolinker.link(feature.properties['TYPE_EPCI'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -117,8 +115,7 @@
         function pop_CommunesIndreetLoire_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Commune</th>\
-                        <td>' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Commune</strong><br />' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -156,36 +153,28 @@
         function pop_PATdpartemental_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">EPCI</th>\
-                        <td>' + (feature.properties['NOM_EPCI'] !== null ? autolinker.link(feature.properties['NOM_EPCI'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>EPCI</strong><br />' + (feature.properties['NOM_EPCI'] !== null ? autolinker.link(feature.properties['NOM_EPCI'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Type</th>\
-                        <td>' + (feature.properties['TYPE_EPCI'] !== null ? autolinker.link(feature.properties['TYPE_EPCI'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Type</strong><br />' + (feature.properties['TYPE_EPCI'] !== null ? autolinker.link(feature.properties['TYPE_EPCI'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Nom du PAT</th>\
-                        <td>' + (feature.properties['Nom du PAT'] !== null ? autolinker.link(feature.properties['Nom du PAT'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom du PAT</strong><br />' + (feature.properties['Nom du PAT'] !== null ? autolinker.link(feature.properties['Nom du PAT'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Porteur</th>\
-                        <td>' + (feature.properties['Nom Porteu'] !== null ? autolinker.link(feature.properties['Nom Porteu'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Porteur</strong><br />' + (feature.properties['Nom Porteu'] !== null ? autolinker.link(feature.properties['Nom Porteu'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Adresse siège</th>\
-                        <td>' + (feature.properties['Adresse si'] !== null ? autolinker.link(feature.properties['Adresse si'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Adresse siège</strong><br />' + (feature.properties['Adresse si'] !== null ? autolinker.link(feature.properties['Adresse si'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">CP</th>\
-                        <td>' + (feature.properties['Code Posta'] !== null ? autolinker.link(feature.properties['Code Posta'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Code Posta'] !== null ? autolinker.link(feature.properties['Code Posta'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ville</th>\
-                        <td>' + (feature.properties['Ville'] !== null ? autolinker.link(feature.properties['Ville'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Ville'] !== null ? autolinker.link(feature.properties['Ville'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Infos</th>\
-                        <td>' + (feature.properties['Informatio'] !== null ? autolinker.link(feature.properties['Informatio'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Infos</strong><br />' + (feature.properties['Informatio'] !== null ? autolinker.link(feature.properties['Informatio'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -238,36 +227,28 @@
         function pop_PATIndreetLoire_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">EPCI</th>\
-                        <td>' + (feature.properties['NOM_EPCI'] !== null ? autolinker.link(feature.properties['NOM_EPCI'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>EPCI</strong><br />' + (feature.properties['NOM_EPCI'] !== null ? autolinker.link(feature.properties['NOM_EPCI'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Type</th>\
-                        <td>' + (feature.properties['TYPE_EPCI'] !== null ? autolinker.link(feature.properties['TYPE_EPCI'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Type</strong><br />' + (feature.properties['TYPE_EPCI'] !== null ? autolinker.link(feature.properties['TYPE_EPCI'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Nom du PAT</th>\
-                        <td>' + (feature.properties['Nom du PAT'] !== null ? autolinker.link(feature.properties['Nom du PAT'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom du PAT</strong><br />' + (feature.properties['Nom du PAT'] !== null ? autolinker.link(feature.properties['Nom du PAT'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Porteur</th>\
-                        <td>' + (feature.properties['Nom Porteu'] !== null ? autolinker.link(feature.properties['Nom Porteu'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Porteur</strong><br />' + (feature.properties['Nom Porteu'] !== null ? autolinker.link(feature.properties['Nom Porteu'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Adresse siège</th>\
-                        <td>' + (feature.properties['Adresse si'] !== null ? autolinker.link(feature.properties['Adresse si'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Adresse siège</strong><br />' + (feature.properties['Adresse si'] !== null ? autolinker.link(feature.properties['Adresse si'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">CP</th>\
-                        <td>' + (feature.properties['Code Posta'] !== null ? autolinker.link(feature.properties['Code Posta'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Code Posta'] !== null ? autolinker.link(feature.properties['Code Posta'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ville</th>\
-                        <td>' + (feature.properties['Ville'] !== null ? autolinker.link(feature.properties['Ville'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Ville'] !== null ? autolinker.link(feature.properties['Ville'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Informations</th>\
-                        <td>' + (feature.properties['Informatio'] !== null ? autolinker.link(feature.properties['Informatio'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Informations</strong><br />' + (feature.properties['Informatio'] !== null ? autolinker.link(feature.properties['Informatio'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -353,12 +334,10 @@
         function pop_Tauxdechmage_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Commune</th>\
-                        <td>' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Commune</strong><br />' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Taux de chômage  (en %)</th>\
-                        <td>' + (feature.properties['Taux de ch'] !== null ? autolinker.link(feature.properties['Taux de ch'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Taux de chômage  (en %)</strong><br />' + (feature.properties['Taux de ch'] !== null ? autolinker.link(feature.properties['Taux de ch'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -442,24 +421,19 @@
         function pop_Mdianeduniveaudevie_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Commune</th>\
-                        <td>' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Commune</strong><br />' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Taux de chômage (en %)</th>\
-                        <td>' + (feature.properties['Taux de ch'] !== null ? autolinker.link(feature.properties['Taux de ch'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Taux de chômage (en %)</strong><br />' + (feature.properties['Taux de ch'] !== null ? autolinker.link(feature.properties['Taux de ch'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">ZRR</th>\
-                        <td>' + (feature.properties['ZRR - Zone'] !== null ? autolinker.link(feature.properties['ZRR - Zone'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>ZRR</strong><br />' + (feature.properties['ZRR - Zone'] !== null ? autolinker.link(feature.properties['ZRR - Zone'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Population (foyers fiscaux) </th>\
-                        <td>' + (feature.properties['Nombre d_1'] !== null ? autolinker.link(feature.properties['Nombre d_1'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Population (foyers fiscaux) </strong><br />' + (feature.properties['Nombre d_1'] !== null ? autolinker.link(feature.properties['Nombre d_1'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Médiane du niveu de vie (en €)</th>\
-                        <td>' + (feature.properties['Médiane d'] !== null ? autolinker.link(feature.properties['Médiane d'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Médiane du niveu de vie (en €)</strong><br />' + (feature.properties['Médiane d'] !== null ? autolinker.link(feature.properties['Médiane d'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -558,16 +532,13 @@
         function pop_ZRR_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Commune</th>\
-                        <td>' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Commune</strong><br />' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Taux de chômage (en %)</th>\
-                        <td>' + (feature.properties['Taux de ch'] !== null ? autolinker.link(feature.properties['Taux de ch'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Taux de chômage (en %)</strong><br />' + (feature.properties['Taux de ch'] !== null ? autolinker.link(feature.properties['Taux de ch'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">ZRR</th>\
-                        <td>' + (feature.properties['ZRR - Zone'] !== null ? autolinker.link(feature.properties['ZRR - Zone'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>ZRR</strong><br />' + (feature.properties['ZRR - Zone'] !== null ? autolinker.link(feature.properties['ZRR - Zone'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -601,19 +572,18 @@
             style: style_ZRR_7_0,
         });
         bounds_group.addLayer(layer_ZRR_7);
-        function pop_Zonesblanchesdelaidealimentaire_8(feature, layer) {
+        function pop_ZonesblanchesdelaidealimentaireIndreetLoire_8(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Commune</th>\
-                        <td>' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Commune</strong><br />' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Zonesblanchesdelaidealimentaire_8_0() {
+        function style_ZonesblanchesdelaidealimentaireIndreetLoire_8_0() {
             return {
-                pane: 'pane_Zonesblanchesdelaidealimentaire_8',
+                pane: 'pane_ZonesblanchesdelaidealimentaireIndreetLoire_8',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -626,25 +596,24 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Zonesblanchesdelaidealimentaire_8');
-        map.getPane('pane_Zonesblanchesdelaidealimentaire_8').style.zIndex = 408;
-        map.getPane('pane_Zonesblanchesdelaidealimentaire_8').style['mix-blend-mode'] = 'normal';
-        var layer_Zonesblanchesdelaidealimentaire_8 = new L.geoJson(json_Zonesblanchesdelaidealimentaire_8, {
+        map.createPane('pane_ZonesblanchesdelaidealimentaireIndreetLoire_8');
+        map.getPane('pane_ZonesblanchesdelaidealimentaireIndreetLoire_8').style.zIndex = 408;
+        map.getPane('pane_ZonesblanchesdelaidealimentaireIndreetLoire_8').style['mix-blend-mode'] = 'normal';
+        var layer_ZonesblanchesdelaidealimentaireIndreetLoire_8 = new L.geoJson(json_ZonesblanchesdelaidealimentaireIndreetLoire_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Zonesblanchesdelaidealimentaire_8',
-            layerName: 'layer_Zonesblanchesdelaidealimentaire_8',
-            pane: 'pane_Zonesblanchesdelaidealimentaire_8',
-            onEachFeature: pop_Zonesblanchesdelaidealimentaire_8,
-            style: style_Zonesblanchesdelaidealimentaire_8_0,
+            dataVar: 'json_ZonesblanchesdelaidealimentaireIndreetLoire_8',
+            layerName: 'layer_ZonesblanchesdelaidealimentaireIndreetLoire_8',
+            pane: 'pane_ZonesblanchesdelaidealimentaireIndreetLoire_8',
+            onEachFeature: pop_ZonesblanchesdelaidealimentaireIndreetLoire_8,
+            style: style_ZonesblanchesdelaidealimentaireIndreetLoire_8_0,
         });
-        bounds_group.addLayer(layer_Zonesblanchesdelaidealimentaire_8);
-        map.addLayer(layer_Zonesblanchesdelaidealimentaire_8);
+        bounds_group.addLayer(layer_ZonesblanchesdelaidealimentaireIndreetLoire_8);
+        map.addLayer(layer_ZonesblanchesdelaidealimentaireIndreetLoire_8);
         function pop_Communesavecaidealimentaire_9(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Commune</th>\
-                        <td>' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Commune</strong><br />' + (feature.properties['libgeo'] !== null ? autolinker.link(feature.properties['libgeo'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -682,44 +651,34 @@
         function pop_SecoursCatholique37_10(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Nom</th>\
-                        <td>' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Adresse</th>\
-                        <td>' + (feature.properties['Adresse'] !== null ? autolinker.link(feature.properties['Adresse'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Adresse</strong><br />' + (feature.properties['Adresse'] !== null ? autolinker.link(feature.properties['Adresse'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ville</th>\
-                        <td>' + (feature.properties['VILLE'] !== null ? autolinker.link(feature.properties['VILLE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['VILLE'] !== null ? autolinker.link(feature.properties['VILLE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Tel</th>\
-                        <td>' + (feature.properties['TELEPHONE'] !== null ? autolinker.link(feature.properties['TELEPHONE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Tel</strong><br />' + (feature.properties['TELEPHONE'] !== null ? autolinker.link(feature.properties['TELEPHONE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Site</th>\
-                        <td>' + (feature.properties['SITE INTER'] !== null ? autolinker.link(feature.properties['SITE INTER'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Site</strong><br />' + (feature.properties['SITE INTER'] !== null ? autolinker.link(feature.properties['SITE INTER'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Public</th>\
-                        <td>' + (feature.properties['PUBLIC'] !== null ? autolinker.link(feature.properties['PUBLIC'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Public</strong><br />' + (feature.properties['PUBLIC'] !== null ? autolinker.link(feature.properties['PUBLIC'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Horaires</th>\
-                        <td>' + (feature.properties['HORAIRES'] !== null ? autolinker.link(feature.properties['HORAIRES'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Horaires</strong><br />' + (feature.properties['HORAIRES'] !== null ? autolinker.link(feature.properties['HORAIRES'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Orientation</th>\
-                        <td>' + (feature.properties['ORIENTATIO'] !== null ? autolinker.link(feature.properties['ORIENTATIO'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Orientation</strong><br />' + (feature.properties['ORIENTATIO'] !== null ? autolinker.link(feature.properties['ORIENTATIO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Participation</th>\
-                        <td>' + (feature.properties['PARTICIPAT'] !== null ? autolinker.link(feature.properties['PARTICIPAT'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Participation</strong><br />' + (feature.properties['PARTICIPAT'] !== null ? autolinker.link(feature.properties['PARTICIPAT'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Particularités</th>\
-                        <td>' + (feature.properties['PARTICULAR'] !== null ? autolinker.link(feature.properties['PARTICULAR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Particularités</strong><br />' + (feature.properties['PARTICULAR'] !== null ? autolinker.link(feature.properties['PARTICULAR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -731,8 +690,8 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Secours Catholique.svg',
-            iconSize: [15.2, 15.2]
+            iconUrl: 'markers/Secours Catholique (rond).svg',
+            iconSize: [15.959999999999999, 15.959999999999999]
         }),
                 interactive: true,
             }
@@ -760,10 +719,10 @@
         function pop_SSVP37_11(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Adresse'] !== null ? autolinker.link(feature.properties['Adresse'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Adresse</strong><br />' + (feature.properties['Adresse'] !== null ? autolinker.link(feature.properties['Adresse'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Ville'] !== null ? autolinker.link(feature.properties['Ville'].toLocaleString()) : '') + '</td>\
@@ -772,10 +731,10 @@
                         <td colspan="2">' + (feature.properties['Code Posta'] !== null ? autolinker.link(feature.properties['Code Posta'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Téléphon'] !== null ? autolinker.link(feature.properties['Téléphon'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Tel</strong><br />' + (feature.properties['Téléphon'] !== null ? autolinker.link(feature.properties['Téléphon'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Site'] !== null ? autolinker.link(feature.properties['Site'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Site</strong><br />' + (feature.properties['Site'] !== null ? autolinker.link(feature.properties['Site'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -787,8 +746,8 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/SSVP.svg',
-            iconSize: [15.2, 15.2]
+            iconUrl: 'markers/SSVP (sfb).svg',
+            iconSize: [15.959999999999999, 15.959999999999999]
         }),
                 interactive: true,
             }
@@ -816,44 +775,34 @@
         function pop_SecoursPopulaire37_12(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Nom</th>\
-                        <td>' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Adresse</th>\
-                        <td>' + (feature.properties['Adresse'] !== null ? autolinker.link(feature.properties['Adresse'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Adresse</strong><br />' + (feature.properties['Adresse'] !== null ? autolinker.link(feature.properties['Adresse'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ville</th>\
-                        <td>' + (feature.properties['VILLE'] !== null ? autolinker.link(feature.properties['VILLE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['VILLE'] !== null ? autolinker.link(feature.properties['VILLE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Tel</th>\
-                        <td>' + (feature.properties['TELEPHONE'] !== null ? autolinker.link(feature.properties['TELEPHONE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Tel</strong><br />' + (feature.properties['TELEPHONE'] !== null ? autolinker.link(feature.properties['TELEPHONE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Site</th>\
-                        <td>' + (feature.properties['SITE INTER'] !== null ? autolinker.link(feature.properties['SITE INTER'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Site</strong><br />' + (feature.properties['SITE INTER'] !== null ? autolinker.link(feature.properties['SITE INTER'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Public</th>\
-                        <td>' + (feature.properties['PUBLIC'] !== null ? autolinker.link(feature.properties['PUBLIC'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Public</strong><br />' + (feature.properties['PUBLIC'] !== null ? autolinker.link(feature.properties['PUBLIC'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Horaires</th>\
-                        <td>' + (feature.properties['HORAIRES'] !== null ? autolinker.link(feature.properties['HORAIRES'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Horaires</strong><br />' + (feature.properties['HORAIRES'] !== null ? autolinker.link(feature.properties['HORAIRES'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Orientation</th>\
-                        <td>' + (feature.properties['ORIENTATIO'] !== null ? autolinker.link(feature.properties['ORIENTATIO'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Orientation</strong><br />' + (feature.properties['ORIENTATIO'] !== null ? autolinker.link(feature.properties['ORIENTATIO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Participation</th>\
-                        <td>' + (feature.properties['PARTICIPAT'] !== null ? autolinker.link(feature.properties['PARTICIPAT'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Participation</strong><br />' + (feature.properties['PARTICIPAT'] !== null ? autolinker.link(feature.properties['PARTICIPAT'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Particularités</th>\
-                        <td>' + (feature.properties['PARTICULAR'] !== null ? autolinker.link(feature.properties['PARTICULAR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Particularités</strong><br />' + (feature.properties['PARTICULAR'] !== null ? autolinker.link(feature.properties['PARTICULAR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -865,8 +814,8 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/secours populaire.svg',
-            iconSize: [22.799999999999997, 22.799999999999997]
+            iconUrl: 'markers/Secours Populaire Français.svg',
+            iconSize: [16.72, 16.72]
         }),
                 interactive: true,
             }
@@ -894,40 +843,31 @@
         function pop_LesRestosduCoeur37_13(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Nom</th>\
-                        <td>' + (feature.properties['field_3'] !== null ? autolinker.link(feature.properties['field_3'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['field_3'] !== null ? autolinker.link(feature.properties['field_3'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Adresse</th>\
-                        <td>' + (feature.properties['field_5'] !== null ? autolinker.link(feature.properties['field_5'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Adresse</strong><br />' + (feature.properties['field_5'] !== null ? autolinker.link(feature.properties['field_5'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ville</th>\
-                        <td>' + (feature.properties['field_6'] !== null ? autolinker.link(feature.properties['field_6'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['field_6'] !== null ? autolinker.link(feature.properties['field_6'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Tel</th>\
-                        <td>' + (feature.properties['field_13'] !== null ? autolinker.link(feature.properties['field_13'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Tel</strong><br />' + (feature.properties['field_13'] !== null ? autolinker.link(feature.properties['field_13'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Site</th>\
-                        <td>' + (feature.properties['field_14'] !== null ? autolinker.link(feature.properties['field_14'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Site</strong><br />' + (feature.properties['field_14'] !== null ? autolinker.link(feature.properties['field_14'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Public</th>\
-                        <td>' + (feature.properties['field_15'] !== null ? autolinker.link(feature.properties['field_15'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Public</strong><br />' + (feature.properties['field_15'] !== null ? autolinker.link(feature.properties['field_15'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Horaires</th>\
-                        <td>' + (feature.properties['field_16'] !== null ? autolinker.link(feature.properties['field_16'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Horaires</strong><br />' + (feature.properties['field_16'] !== null ? autolinker.link(feature.properties['field_16'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Orientation</th>\
-                        <td>' + (feature.properties['field_17'] !== null ? autolinker.link(feature.properties['field_17'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Orientation</strong><br />' + (feature.properties['field_17'] !== null ? autolinker.link(feature.properties['field_17'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Particularités</th>\
-                        <td>' + (feature.properties['field_19'] !== null ? autolinker.link(feature.properties['field_19'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Particularités</strong><br />' + (feature.properties['field_19'] !== null ? autolinker.link(feature.properties['field_19'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -939,8 +879,8 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Restos_du_coeur_Logo.svg',
-            iconSize: [19.0, 19.0]
+            iconUrl: 'markers/RDC (fond blanc).svg',
+            iconSize: [15.959999999999997, 15.959999999999997]
         }),
                 interactive: true,
             }
@@ -968,44 +908,34 @@
         function pop_Associationspartenaires37_14(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Nom</th>\
-                        <td>' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Adresse</th>\
-                        <td>' + (feature.properties['Adresse'] !== null ? autolinker.link(feature.properties['Adresse'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Adresse</strong><br />' + (feature.properties['Adresse'] !== null ? autolinker.link(feature.properties['Adresse'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ville</th>\
-                        <td>' + (feature.properties['VILLE'] !== null ? autolinker.link(feature.properties['VILLE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['VILLE'] !== null ? autolinker.link(feature.properties['VILLE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Tel</th>\
-                        <td>' + (feature.properties['TELEPHONE'] !== null ? autolinker.link(feature.properties['TELEPHONE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Tel</strong><br />' + (feature.properties['TELEPHONE'] !== null ? autolinker.link(feature.properties['TELEPHONE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Site</th>\
-                        <td>' + (feature.properties['SITE INTER'] !== null ? autolinker.link(feature.properties['SITE INTER'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Site</strong><br />' + (feature.properties['SITE INTER'] !== null ? autolinker.link(feature.properties['SITE INTER'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Public</th>\
-                        <td>' + (feature.properties['PUBLIC'] !== null ? autolinker.link(feature.properties['PUBLIC'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Public</strong><br />' + (feature.properties['PUBLIC'] !== null ? autolinker.link(feature.properties['PUBLIC'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Horaires</th>\
-                        <td>' + (feature.properties['HORAIRES'] !== null ? autolinker.link(feature.properties['HORAIRES'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Horaires</strong><br />' + (feature.properties['HORAIRES'] !== null ? autolinker.link(feature.properties['HORAIRES'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Orientation</th>\
-                        <td>' + (feature.properties['ORIENTATIO'] !== null ? autolinker.link(feature.properties['ORIENTATIO'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Orientation</strong><br />' + (feature.properties['ORIENTATIO'] !== null ? autolinker.link(feature.properties['ORIENTATIO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Participation</th>\
-                        <td>' + (feature.properties['PARTICIPAT'] !== null ? autolinker.link(feature.properties['PARTICIPAT'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Participation</strong><br />' + (feature.properties['PARTICIPAT'] !== null ? autolinker.link(feature.properties['PARTICIPAT'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Particularités</th>\
-                        <td>' + (feature.properties['PARTICULAR'] !== null ? autolinker.link(feature.properties['PARTICULAR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Particularités</strong><br />' + (feature.properties['PARTICULAR'] !== null ? autolinker.link(feature.properties['PARTICULAR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -1014,12 +944,16 @@
         function style_Associationspartenaires37_14_0() {
             return {
                 pane: 'pane_Associationspartenaires37_14',
-        rotationAngle: 0.0,
-        rotationOrigin: 'center center',
-        icon: L.icon({
-            iconUrl: 'markers/Banque alimenatire sf.svg',
-            iconSize: [15.2, 15.2]
-        }),
+                radius: 3.9999999999999987,
+                opacity: 1,
+                color: 'rgba(237,95,24,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,127,0,1.0)',
                 interactive: true,
             }
         }
@@ -1038,7 +972,7 @@
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_Associationspartenaires37_14_0(feature));
+                return L.circleMarker(latlng, style_Associationspartenaires37_14_0(feature));
             },
         });
         bounds_group.addLayer(layer_Associationspartenaires37_14);
@@ -1046,44 +980,34 @@
         function pop_CCASpartenaires37_15(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Nom</th>\
-                        <td>' + (feature.properties['ASSOCIATIO'] !== null ? autolinker.link(feature.properties['ASSOCIATIO'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['ASSOCIATIO'] !== null ? autolinker.link(feature.properties['ASSOCIATIO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Adresse</th>\
-                        <td>' + (feature.properties['ADRESSE Di'] !== null ? autolinker.link(feature.properties['ADRESSE Di'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Adresse</strong><br />' + (feature.properties['ADRESSE Di'] !== null ? autolinker.link(feature.properties['ADRESSE Di'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">CP</th>\
-                        <td>' + (feature.properties['CP distrib'] !== null ? autolinker.link(feature.properties['CP distrib'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['CP distrib'] !== null ? autolinker.link(feature.properties['CP distrib'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ville</th>\
-                        <td>' + (feature.properties['VILLE Dist'] !== null ? autolinker.link(feature.properties['VILLE Dist'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['VILLE Dist'] !== null ? autolinker.link(feature.properties['VILLE Dist'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Tel</th>\
-                        <td>' + (feature.properties['TEL'] !== null ? autolinker.link(feature.properties['TEL'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Tel</strong><br />' + (feature.properties['TEL'] !== null ? autolinker.link(feature.properties['TEL'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Public</th>\
-                        <td>' + (feature.properties['PUBLIC'] !== null ? autolinker.link(feature.properties['PUBLIC'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Public</strong><br />' + (feature.properties['PUBLIC'] !== null ? autolinker.link(feature.properties['PUBLIC'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Horaires</th>\
-                        <td>' + (feature.properties['HORAIRES'] !== null ? autolinker.link(feature.properties['HORAIRES'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Horaires</strong><br />' + (feature.properties['HORAIRES'] !== null ? autolinker.link(feature.properties['HORAIRES'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Orientation </th>\
-                        <td>' + (feature.properties['ORIENTATIO'] !== null ? autolinker.link(feature.properties['ORIENTATIO'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Orientation </strong><br />' + (feature.properties['ORIENTATIO'] !== null ? autolinker.link(feature.properties['ORIENTATIO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Participation</th>\
-                        <td>' + (feature.properties['PARTICIPAT'] !== null ? autolinker.link(feature.properties['PARTICIPAT'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Participation</strong><br />' + (feature.properties['PARTICIPAT'] !== null ? autolinker.link(feature.properties['PARTICIPAT'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Particularités</th>\
-                        <td>' + (feature.properties['PARTICULAR'] !== null ? autolinker.link(feature.properties['PARTICULAR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Particularités</strong><br />' + (feature.properties['PARTICULAR'] !== null ? autolinker.link(feature.properties['PARTICULAR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -1128,44 +1052,34 @@
         function pop_Epiceriessocialespartenaires37_16(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Nom</th>\
-                        <td>' + (feature.properties['NOM'] !== null ? autolinker.link(feature.properties['NOM'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['NOM'] !== null ? autolinker.link(feature.properties['NOM'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Adresse</th>\
-                        <td>' + (feature.properties['ADRESSE'] !== null ? autolinker.link(feature.properties['ADRESSE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Adresse</strong><br />' + (feature.properties['ADRESSE'] !== null ? autolinker.link(feature.properties['ADRESSE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ville</th>\
-                        <td>' + (feature.properties['VILLE'] !== null ? autolinker.link(feature.properties['VILLE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['VILLE'] !== null ? autolinker.link(feature.properties['VILLE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Tel</th>\
-                        <td>' + (feature.properties['TELEPHONE'] !== null ? autolinker.link(feature.properties['TELEPHONE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Tel</strong><br />' + (feature.properties['TELEPHONE'] !== null ? autolinker.link(feature.properties['TELEPHONE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Site</th>\
-                        <td>' + (feature.properties['SITE INTER'] !== null ? autolinker.link(feature.properties['SITE INTER'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Site</strong><br />' + (feature.properties['SITE INTER'] !== null ? autolinker.link(feature.properties['SITE INTER'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Public</th>\
-                        <td>' + (feature.properties['PUBLIC'] !== null ? autolinker.link(feature.properties['PUBLIC'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Public</strong><br />' + (feature.properties['PUBLIC'] !== null ? autolinker.link(feature.properties['PUBLIC'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Horaires</th>\
-                        <td>' + (feature.properties['HORAIRES'] !== null ? autolinker.link(feature.properties['HORAIRES'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Horaires</strong><br />' + (feature.properties['HORAIRES'] !== null ? autolinker.link(feature.properties['HORAIRES'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Orientation</th>\
-                        <td>' + (feature.properties['ORIENTATIO'] !== null ? autolinker.link(feature.properties['ORIENTATIO'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Orientation</strong><br />' + (feature.properties['ORIENTATIO'] !== null ? autolinker.link(feature.properties['ORIENTATIO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Participation </th>\
-                        <td>' + (feature.properties['PARTICIPAT'] !== null ? autolinker.link(feature.properties['PARTICIPAT'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Participation </strong><br />' + (feature.properties['PARTICIPAT'] !== null ? autolinker.link(feature.properties['PARTICIPAT'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Particularités</th>\
-                        <td>' + (feature.properties['PARTICULAR'] !== null ? autolinker.link(feature.properties['PARTICULAR'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Particularités</strong><br />' + (feature.properties['PARTICULAR'] !== null ? autolinker.link(feature.properties['PARTICULAR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -1210,40 +1124,31 @@
         function pop_Epiceriesitinrantespartenaires37_17(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Nom</th>\
-                        <td>' + (feature.properties['NOM'] !== null ? autolinker.link(feature.properties['NOM'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['NOM'] !== null ? autolinker.link(feature.properties['NOM'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Territoire</th>\
-                        <td>' + (feature.properties['TERRITOIRE'] !== null ? autolinker.link(feature.properties['TERRITOIRE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Territoire</strong><br />' + (feature.properties['TERRITOIRE'] !== null ? autolinker.link(feature.properties['TERRITOIRE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ville</th>\
-                        <td>' + (feature.properties['VILLE'] !== null ? autolinker.link(feature.properties['VILLE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Ville</strong><br />' + (feature.properties['VILLE'] !== null ? autolinker.link(feature.properties['VILLE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Tel</th>\
-                        <td>' + (feature.properties['TELEPHONE'] !== null ? autolinker.link(feature.properties['TELEPHONE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Tel</strong><br />' + (feature.properties['TELEPHONE'] !== null ? autolinker.link(feature.properties['TELEPHONE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Site</th>\
-                        <td>' + (feature.properties['SITE INTER'] !== null ? autolinker.link(feature.properties['SITE INTER'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Site</strong><br />' + (feature.properties['SITE INTER'] !== null ? autolinker.link(feature.properties['SITE INTER'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Public</th>\
-                        <td>' + (feature.properties['PUBLIC'] !== null ? autolinker.link(feature.properties['PUBLIC'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Public</strong><br />' + (feature.properties['PUBLIC'] !== null ? autolinker.link(feature.properties['PUBLIC'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Horaires</th>\
-                        <td>' + (feature.properties['HORAIRES'] !== null ? autolinker.link(feature.properties['HORAIRES'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Horaires</strong><br />' + (feature.properties['HORAIRES'] !== null ? autolinker.link(feature.properties['HORAIRES'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Orientation</th>\
-                        <td>' + (feature.properties['ORIENTATIO'] !== null ? autolinker.link(feature.properties['ORIENTATIO'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Orientation</strong><br />' + (feature.properties['ORIENTATIO'] !== null ? autolinker.link(feature.properties['ORIENTATIO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Participation </th>\
-                        <td>' + (feature.properties['PARTICIPAT'] !== null ? autolinker.link(feature.properties['PARTICIPAT'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Participation </strong><br />' + (feature.properties['PARTICIPAT'] !== null ? autolinker.link(feature.properties['PARTICIPAT'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -1256,7 +1161,7 @@
         rotationOrigin: 'center center',
         icon: L.icon({
             iconUrl: 'markers/camion.svg',
-            iconSize: [15.2, 15.2]
+            iconSize: [16.72, 16.72]
         }),
                 interactive: true,
             }
@@ -1284,28 +1189,22 @@
         function pop_BACentreValdeLoire_18(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Nom</th>\
-                        <td>' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Nom</strong><br />' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Adresse</th>\
-                        <td>' + (feature.properties['Adresse'] !== null ? autolinker.link(feature.properties['Adresse'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Adresse</strong><br />' + (feature.properties['Adresse'] !== null ? autolinker.link(feature.properties['Adresse'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ville</th>\
-                        <td>' + (feature.properties['Ville'] !== null ? autolinker.link(feature.properties['Ville'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Ville'] !== null ? autolinker.link(feature.properties['Ville'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">CP</th>\
-                        <td>' + (feature.properties['CP'] !== null ? autolinker.link(feature.properties['CP'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['CP'] !== null ? autolinker.link(feature.properties['CP'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Tel</th>\
-                        <td>' + (feature.properties['Tel'] !== null ? autolinker.link(feature.properties['Tel'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Tel</strong><br />' + (feature.properties['Tel'] !== null ? autolinker.link(feature.properties['Tel'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Site</th>\
-                        <td>' + (feature.properties['Site'] !== null ? autolinker.link(feature.properties['Site'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Site</strong><br />' + (feature.properties['Site'] !== null ? autolinker.link(feature.properties['Site'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -1317,8 +1216,8 @@
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/BA fond blanc .svg',
-            iconSize: [45.599999999999994, 45.599999999999994]
+            iconUrl: 'markers/BA (entrepôt).svg',
+            iconSize: [22.800000000000047, 22.800000000000047]
         }),
                 interactive: true,
             }
@@ -1415,7 +1314,7 @@
         bounds_group.addLayer(layer_RgionCentreValdeLoire_20);
         map.addLayer(layer_RgionCentreValdeLoire_20);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/RgionCentreValdeLoire_20.png" /> Région Centre Val de Loire': layer_RgionCentreValdeLoire_20,'<img src="legend/IndreetLoire_19.png" /> Indre et Loire': layer_IndreetLoire_19,'<img src="legend/BACentreValdeLoire_18.png" /> BA (Centre Val de Loire)': layer_BACentreValdeLoire_18,'<img src="legend/Epiceriesitinrantespartenaires37_17.png" /> Epiceries itinérantes partenaires (37)': layer_Epiceriesitinrantespartenaires37_17,'<img src="legend/Epiceriessocialespartenaires37_16.png" /> Epiceries sociales partenaires (37)': layer_Epiceriessocialespartenaires37_16,'<img src="legend/CCASpartenaires37_15.png" /> CCAS partenaires (37)': layer_CCASpartenaires37_15,'<img src="legend/Associationspartenaires37_14.png" /> Associations partenaires (37)': layer_Associationspartenaires37_14,'<img src="legend/LesRestosduCoeur37_13.png" /> Les Restos du Coeur (37) ': layer_LesRestosduCoeur37_13,'<img src="legend/SecoursPopulaire37_12.png" /> Secours Populaire (37)': layer_SecoursPopulaire37_12,'<img src="legend/SSVP37_11.png" /> SSVP (37)': layer_SSVP37_11,'<img src="legend/SecoursCatholique37_10.png" /> Secours Catholique (37)': layer_SecoursCatholique37_10,'<img src="legend/Communesavecaidealimentaire_9.png" /> Communes avec aide alimentaire ': layer_Communesavecaidealimentaire_9,'<img src="legend/Zonesblanchesdelaidealimentaire_8.png" /> Zones blanches de l\'aide alimentaire ': layer_Zonesblanchesdelaidealimentaire_8,'<img src="legend/ZRR_7.png" /> ZRR ': layer_ZRR_7,'Médiane du niveau de vie <br /><table><tr><td style="text-align: center;"><img src="legend/Mdianeduniveaudevie_6_15430206480.png" /></td><td>15430 - 20648</td></tr><tr><td style="text-align: center;"><img src="legend/Mdianeduniveaudevie_6_20648217801.png" /></td><td>20648 - 21780</td></tr><tr><td style="text-align: center;"><img src="legend/Mdianeduniveaudevie_6_21780228642.png" /></td><td>21780 - 22864</td></tr><tr><td style="text-align: center;"><img src="legend/Mdianeduniveaudevie_6_22864241443.png" /></td><td>22864 - 24144</td></tr><tr><td style="text-align: center;"><img src="legend/Mdianeduniveaudevie_6_24144334404.png" /></td><td>24144 - 33440</td></tr></table>': layer_Mdianeduniveaudevie_6,'Taux de chômage <br /><table><tr><td style="text-align: center;"><img src="legend/Tauxdechmage_5_0760.png" /></td><td>0 - 7,6</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage_5_76971.png" /></td><td>7,6 - 9,7</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage_5_971242.png" /></td><td>9,7 - 12,4</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage_5_1244063.png" /></td><td>12,4 - 40,6</td></tr></table>': layer_Tauxdechmage_5,'PAT Indre et Loire<br /><table><tr><td style="text-align: center;"><img src="legend/PATIndreetLoire_4_CCgatineetPaysdeRacan0.png" /></td><td>CC gatine et Pays de Racan</td></tr><tr><td style="text-align: center;"><img src="legend/PATIndreetLoire_4_CCTouraineValléedelIndre1.png" /></td><td>CC Touraine Vallée de l\'Indre</td></tr><tr><td style="text-align: center;"><img src="legend/PATIndreetLoire_4_CommunautédeCommunesLochesSudTouraine2.png" /></td><td>Communauté de Communes Loches Sud Touraine</td></tr><tr><td style="text-align: center;"><img src="legend/PATIndreetLoire_4_ToursMétropole3.png" /></td><td>Tours Métropole</td></tr></table>': layer_PATIndreetLoire_4,'<img src="legend/PATdpartemental_3.png" /> PAT départemental': layer_PATdpartemental_3,'<img src="legend/CommunesIndreetLoire_2.png" /> Communes (Indre et Loire)': layer_CommunesIndreetLoire_2,'<img src="legend/EPCI37_1.png" /> EPCI 37': layer_EPCI37_1,"Google Road": layer_GoogleRoad_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/RgionCentreValdeLoire_20.png" /> Région Centre Val de Loire': layer_RgionCentreValdeLoire_20,'<img src="legend/IndreetLoire_19.png" /> Indre et Loire': layer_IndreetLoire_19,'<img src="legend/BACentreValdeLoire_18.png" /> BA (Centre Val de Loire)': layer_BACentreValdeLoire_18,'<img src="legend/Epiceriesitinrantespartenaires37_17.png" /> Epiceries itinérantes partenaires (37)': layer_Epiceriesitinrantespartenaires37_17,'<img src="legend/Epiceriessocialespartenaires37_16.png" /> Epiceries sociales partenaires (37)': layer_Epiceriessocialespartenaires37_16,'<img src="legend/CCASpartenaires37_15.png" /> CCAS partenaires (37)': layer_CCASpartenaires37_15,'<img src="legend/Associationspartenaires37_14.png" /> Associations partenaires (37)': layer_Associationspartenaires37_14,'<img src="legend/LesRestosduCoeur37_13.png" /> Les Restos du Coeur (37) ': layer_LesRestosduCoeur37_13,'<img src="legend/SecoursPopulaire37_12.png" /> Secours Populaire (37)': layer_SecoursPopulaire37_12,'<img src="legend/SSVP37_11.png" /> SSVP (37)': layer_SSVP37_11,'<img src="legend/SecoursCatholique37_10.png" /> Secours Catholique (37)': layer_SecoursCatholique37_10,'<img src="legend/Communesavecaidealimentaire_9.png" /> Communes avec aide alimentaire ': layer_Communesavecaidealimentaire_9,'<img src="legend/ZonesblanchesdelaidealimentaireIndreetLoire_8.png" /> Zones blanches de l\'aide alimentaire (Indre et Loire) ': layer_ZonesblanchesdelaidealimentaireIndreetLoire_8,'<img src="legend/ZRR_7.png" /> ZRR ': layer_ZRR_7,'Médiane du niveau de vie <br /><table><tr><td style="text-align: center;"><img src="legend/Mdianeduniveaudevie_6_15430206480.png" /></td><td>15430 - 20648</td></tr><tr><td style="text-align: center;"><img src="legend/Mdianeduniveaudevie_6_20648217801.png" /></td><td>20648 - 21780</td></tr><tr><td style="text-align: center;"><img src="legend/Mdianeduniveaudevie_6_21780228642.png" /></td><td>21780 - 22864</td></tr><tr><td style="text-align: center;"><img src="legend/Mdianeduniveaudevie_6_22864241443.png" /></td><td>22864 - 24144</td></tr><tr><td style="text-align: center;"><img src="legend/Mdianeduniveaudevie_6_24144334404.png" /></td><td>24144 - 33440</td></tr></table>': layer_Mdianeduniveaudevie_6,'Taux de chômage <br /><table><tr><td style="text-align: center;"><img src="legend/Tauxdechmage_5_0760.png" /></td><td>0 - 7,6</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage_5_76971.png" /></td><td>7,6 - 9,7</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage_5_971242.png" /></td><td>9,7 - 12,4</td></tr><tr><td style="text-align: center;"><img src="legend/Tauxdechmage_5_1244063.png" /></td><td>12,4 - 40,6</td></tr></table>': layer_Tauxdechmage_5,'PAT Indre et Loire<br /><table><tr><td style="text-align: center;"><img src="legend/PATIndreetLoire_4_CCgatineetPaysdeRacan0.png" /></td><td>CC gatine et Pays de Racan</td></tr><tr><td style="text-align: center;"><img src="legend/PATIndreetLoire_4_CCTouraineValléedelIndre1.png" /></td><td>CC Touraine Vallée de l\'Indre</td></tr><tr><td style="text-align: center;"><img src="legend/PATIndreetLoire_4_CommunautédeCommunesLochesSudTouraine2.png" /></td><td>Communauté de Communes Loches Sud Touraine</td></tr><tr><td style="text-align: center;"><img src="legend/PATIndreetLoire_4_ToursMétropole3.png" /></td><td>Tours Métropole</td></tr></table>': layer_PATIndreetLoire_4,'<img src="legend/PATdpartemental_3.png" /> PAT départemental': layer_PATdpartemental_3,'<img src="legend/CommunesIndreetLoire_2.png" /> Communes (Indre et Loire)': layer_CommunesIndreetLoire_2,'<img src="legend/EPCI37_1.png" /> EPCI 37': layer_EPCI37_1,"Google Road": layer_GoogleRoad_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
